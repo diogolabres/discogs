@@ -1,0 +1,27 @@
+oauth:
+  consumer-key: KaEqgLucLzPJkKYtOrWO
+  token: NpCWakpUbPEStiIusEGQGbDhHXgywvRXGnNYaKHB
+  signature: ubJTaydCxKXwTcLQiWWAewqjpBkCofHu&vrGyjjtiVYGVmCjgZAybeFCQoSupfbxxPJDVvQbm
+  signature-method: PLAINTEXT
+  url: https://api.discogs.com
+  nonce: random
+
+spring:
+  application:
+    name: discogs-service
+  data:
+    web:
+      pageable:
+        max-page-size: 10000
+  jpa:
+    database: postgresql
+    generate-ddl: false
+    properties.hibernate:
+      enable_lazy_load_no_trans: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: "jdbc:postgresql://prod-url:5432/discogs"
+    username: "prod-user"
+    password: "prod-password"
+    driverClassName: org.postgresql.Driver
